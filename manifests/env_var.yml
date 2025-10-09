@@ -1,0 +1,15 @@
+kind: Pod
+apiVersion: v1
+metadata:
+  name: testpod
+spec:
+  containers:
+    - name: container1
+      image: ubuntu
+      command: ["/bin/bash","-c","while true;do echo first container;sleep 5;done"]
+      env:
+      - name: DEMO_GREETING
+        value: "Hello from the environment"
+      - name: DEMO_FAREWELL
+        value: "Such a sweet sorrow"
+  restartPolicy: Never
