@@ -6,6 +6,7 @@ metadata:
     app: my-application
     environment: development
     tier: frontend
+    region: ind
 spec:
   containers:
   - name: nginx
