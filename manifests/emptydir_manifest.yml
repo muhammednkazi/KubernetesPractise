@@ -1,0 +1,23 @@
+kind: Pod
+apiVersion: v1
+metadata:
+  name: volumetestpod
+spec:
+  containers:
+  - name: test-container1
+    image: nginx
+    command: ["/bin/bash","-c","sleep 5000"]
+    volumeMounts:
+    - name: podvolume
+      mountPath: /tmp/volume1
+  
+  - name: test-container2
+    image: nginx
+    command: ["/bin/bash","-c","sleep 5000"]
+    volumeMounts:
+    - name: podvolume
+      mountPath: /tmp/volume2
+    
+  volumes:
+  - name: podvolume
+    emptyDir: {}
